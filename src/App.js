@@ -29,7 +29,6 @@ function App() {
         }
     }
 
-
   return (
     <div className="container">
         <h1 className="title">Buscador CEP</h1>
@@ -40,6 +39,11 @@ function App() {
             placeholder="Digite seu cep..."
             value={input}
             onChange={(e) => setInput(e.target.value) }
+            onKeyDown={(e) => {
+                if(e.key === 'Enter'){
+                    handleSearch()
+                }
+            }}
             />
 
             <button className="buttonSearch" onClick={handleSearch}>
